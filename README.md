@@ -113,7 +113,7 @@ Permite:
 # Requisitos
 
 **Se encuentran mejor definidos en requiriments.txt**
-Python 3.10+
+- Python 3.10+
 
 Instalación estándar:
 - pip install -r requirements.txt
