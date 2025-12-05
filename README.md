@@ -38,12 +38,12 @@ Está diseñado para trabajar con **cualquier dataset** que contenga una columna
 
 Este pipeline realiza:
 
-### ✔ Entrada de datos
+### Entrada de datos
 - Lectura de CSV
 - Selección de la columna de texto
 - Validación de estructura mínima del dataset.
 
-### ✔ Preprocesamiento robusto
+### Preprocesamiento robusto
 - Normalización
 - Eliminación de emojis
 - Acentos opcional
@@ -53,7 +53,7 @@ Este pipeline realiza:
 - Lematización
 - Compatibilidad español/inglés
 
-### ✔ Visualizaciones
+### Visualizaciones
 Se generan gráficas interactivas mediante Altair:
 - Nube de palabras
 - Frecuencia de palabras
@@ -61,7 +61,7 @@ Se generan gráficas interactivas mediante Altair:
 - Top-10 bigramas y trigramas
 - Gráficos configurables (paletas accesibles)
 
-### ✔ Modelado de tópicos (LDA/BERTopic)
+### Modelado de tópicos (LDA/BERTopic)
 El pipeline construye y analiza tópicos mediante:
 - LDA (rápido y ligero)
 - BERTopic (basado en embeddings + clustering avanzado)
@@ -73,12 +73,12 @@ Incluye:
 - Identificación del tópico dominante
 - Ablación de términos únicos por tópico
 
-### ✔ Visualización avanzada
+### Visualización avanzada
 - UMAP interactivo coloreado por tópicos
 - UMAP de outliers
 - Soporte para distintas paletas y formas de puntos
 
-### ✔ Detección de outliers
+### Detección de outliers
 Múltiples métodos incluidos:
 - Topic Confidence
 - UMAP z-score
@@ -90,7 +90,7 @@ Adicional:
 - Votación **ponderada** entre métodos
 - Razón del outlier + score explicativo
 
-### ✔ Reporte Web Interactivo
+### Reporte Web Interactivo
 Construido con Jinja2:
 - Plantilla profesional
 - Visualizaciones incrustadas mediante iframes
@@ -98,7 +98,7 @@ Construido con Jinja2:
 - Secciones explicativas generadas automáticamente
 - Exportación directa a /data/outputs/
 
-### ✔ CLI profesional
+### CLI profesional
 Permite:
 
 --file          Ruta del CSV
@@ -112,6 +112,7 @@ Permite:
 
 # Requisitos
 
+**Se encuentran mejor definidos en requiriments.txt**
 Python 3.10+
 
 Instalación estándar:
@@ -157,8 +158,8 @@ Gestiona:
 - parámetros del usuario
 - ejecución del pipeline completo
 
-✔ Se puede modificar
-✔ Se debe ejecutar desde consola
+Se puede modificar
+Se debe ejecutar desde consola
 
 
 2. codigo_fuente/ — Núcleo del proyecto
@@ -213,8 +214,8 @@ settings.json: configuración editable por usuario
 
 config_loader.py: carga segura de parámetros
 
-✔ Modificable: settings.json
-⚠ No recomendado modificar config_loader.py
+Modificable: settings.json
+No recomendado modificar config_loader.py
 
 3. data/
 
@@ -222,13 +223,13 @@ config_loader.py: carga segura de parámetros
 
 outputs/: resultados exportados (UMAPs, tablas, reporte HTML)
 
-✔ Puedes modificar estos archivos libremente.
+Puedes modificar estos archivos libremente.
 
 4. templates/
 
 Plantillas HTML del reporte.
 
-✔ Modificables para personalizar el diseño del dashboard.
+Modificables para personalizar el diseño del dashboard.
 
 5. static/
 
