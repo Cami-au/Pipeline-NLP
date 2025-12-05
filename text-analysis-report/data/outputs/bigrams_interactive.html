@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-ade459eacebb2b37f35428bf632ee802"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "ngram", "scale": {"scheme": "tableau10"}, "type": "nominal"}, "tooltip": [{"field": "ngram", "type": "nominal"}, {"field": "count", "type": "quantitative"}], "x": {"field": "count", "type": "quantitative"}, "y": {"field": "ngram", "sort": "-x", "type": "nominal"}}, "height": 450, "title": "Top 2-gramas (Interactivo)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-ade459eacebb2b37f35428bf632ee802": [{"ngram": "mountain background", "count": 1394}, {"ngram": "rocky mountain", "count": 1332}, {"ngram": "mountain lake", "count": 1131}, {"ngram": "beautiful city", "count": 662}, {"ngram": "mountain mountain", "count": 627}, {"ngram": "city city", "count": 601}, {"ngram": "national park", "count": 582}, {"ngram": "banff national", "count": 569}, {"ngram": "city skyline", "count": 567}, {"ngram": "city background", "count": 561}, {"ngram": "background mountain", "count": 545}, {"ngram": "toronto city", "count": 542}, {"ngram": "beautiful lake", "count": 516}, {"ngram": "city toronto", "count": 511}, {"ngram": "british columbia", "count": 507}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

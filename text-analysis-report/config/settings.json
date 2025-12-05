@@ -1,0 +1,137 @@
+{
+    "REPORT": {
+        "title": "Reporte NLP",
+        "background_image": "static/fondo.png"
+    },
+
+    "DATA_LOADING": {
+        "text_column": null,
+        "min_text_length": 12,
+        "combine_columns": true
+    },
+
+    "PREPROCESSING": {
+        "language": "en",
+        "min_token_length": 2,
+        "preserve_accents": true,
+        "return_text_only": false,
+        "emoji_handling": "remove",
+        "custom_stopwords": []
+    },
+
+    "VISUALIZATION": {
+        "palette_id": "1",
+
+        "palette_options": {
+            "1": {
+                "ngram_palette": "tableau10",
+                "bubble_palette": "cividis",
+                "topic_palette": "set2"
+            },
+            "2": {
+                "ngram_palette": "category10",
+                "bubble_palette": "viridis",
+                "topic_palette": "set1"
+            },
+            "3": {
+                "ngram_palette": "dark2",
+                "bubble_palette": "magma",
+                "topic_palette": "accent"
+            },
+            "4": {
+                "ngram_palette": "set3",
+                "bubble_palette": "plasma",
+                "topic_palette": "paired"
+            },
+            "5": {
+                "ngram_palette": "pastel1",
+                "bubble_palette": "inferno",
+                "topic_palette": "set2"
+            }
+        },
+
+        "shapes": [
+            "circle",
+            "square",
+            "triangle",
+            "diamond",
+            "cross",
+            "star"
+        ]
+    },
+
+    "TOPICS": {
+        "method": "lda",
+        "num_topics": 5,
+        "force_topic_count": true,
+        "fallback_to_lda": true,
+        "max_features": 5000,
+        "min_df": 2,
+        "max_df": 0.95,
+        "min_docs_for_topics": 5
+    },
+
+    "UMAP": {
+        "n_neighbors": 15,
+        "min_dist": 0.1,
+        "metric": "cosine",
+        "random_state": 42
+    },
+
+    "HDBSCAN": {
+    "min_cluster_size": 30,
+    "min_samples": 1
+    },
+
+    "OUTLIERS": {
+        "enabled_methods": {
+            "topic_confidence": true,
+            "umap_distance": true,
+            "dbscan": true,
+            "isolation_forest": true,
+            "oneclass_svm": true
+        },
+
+        "require_methods": 1,
+
+        "topic_confidence_threshold": 0.30,
+        "umap_zscore_threshold": 3.0,
+
+        "dbscan_eps": 0.40,
+        "dbscan_min_samples": 3,
+
+        "iforest_contamination": 0.05,
+
+        "ocsvm_nu": 0.15,
+        "ocsvm_kernel": "rbf"
+    },
+
+    "OUTLIERS_SCORE": {
+        "weights": {
+            "low_topic_confidence": 2,
+            "high_umap_distance": 1,
+            "dbscan_noise": 2,
+            "isolation_forest": 1,
+            "oneclass_svm": 1
+        },
+        "required_score": 4
+    },
+
+    "OUTLIERS_VIS": {
+        "normal_shape": "circle",
+        "outlier_shape": "diamond",
+
+        "normal_point_opacity": 0.25,
+        "normal_point_color": "#bbbbbb",
+        "normal_point_size": 40,
+
+        "outlier_point_color": "#D62728",
+        "outlier_point_size": 120,
+
+        "enable_tooltip": true,
+        "show_votes_in_tooltip": true,
+
+        "scatter_title": "Outliers resaltados en UMAP"
+    }
+}
+
